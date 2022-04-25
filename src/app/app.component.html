@@ -1,0 +1,21 @@
+<mat-drawer-container class="example-container" autosize>
+
+  <!-- app sidenav -->
+  <app-navbar [sideNavRef]="drawer" ></app-navbar>
+
+  <!-- the sidebar and content -->
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Drink Ingredients</p>
+    <mat-checkbox #c style="display: flex;" *ngFor="let ingredient of ingredientList" (click)="updateIngredients(ingredient, c.checked)" 
+                  routerLink="/Drinks"> 
+      {{ingredient.name}}
+    </mat-checkbox>
+  </mat-drawer>
+
+  <!-- rest of the app. Router and messages -->
+  <div style="display: flex; flex-direction: column;">
+    <router-outlet></router-outlet>
+    <app-messages ></app-messages>
+  </div>
+</mat-drawer-container>
+<app-footer> </app-footer>

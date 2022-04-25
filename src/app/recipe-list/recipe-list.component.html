@@ -1,0 +1,24 @@
+<div class = "flex">
+  <!-- routerLink="/Details/{{F.id}}" >
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+   -->
+  <ng-container >
+    <mat-card  @items *ngFor="let drink of renderedDrinks | keyvalue"  class="example-card" routerLink="/Details/{{drink.value.id}}" >
+       <mat-card-header >
+          <mat-card-subtitle>{{drink.value.name}}</mat-card-subtitle>
+      </mat-card-header>
+     
+       <img class = "photo" mat-card-image src="{{drink.value.photo}}" >
+      
+      <mat-card-content>
+        <p>
+          a drink
+        </p>
+      </mat-card-content>  
+    </mat-card>
+</ng-container>
+</div>
+ 
