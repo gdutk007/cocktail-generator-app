@@ -1,0 +1,26 @@
+<div>
+    <mat-card class ="example-detail" >
+      <mat-card-header>
+        <div mat-card-avatar></div>
+        <mat-card-title>   {{drink["drinks"][0].strDrink}} </mat-card-title>
+        <mat-card-subtitle>  <div *ngIf="drink['drinks'][0].strTags?.length > 0"> <b>Drink tags:</b> {{drink["drinks"][0].strTags}} </div></mat-card-subtitle>
+      </mat-card-header>
+      <div mat-card-image>
+        <img class="photo" mat-card-image src="{{drink['drinks'][0].strDrinkThumb}}" >
+      </div>
+      <mat-card-content>
+        <b> Instructions </b>
+        <p>
+          {{drink["drinks"][0].strInstructions}} 
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <share-buttons [theme]="'material-dark'"
+        [include]="['facebook','twitter','linkedin','pinterest','reddit','tumblr','mix','viber','vk','telegram','messenger','whatsapp','xing','line','sms','email','print','copy']"
+        [show]="5"
+        [url]="'https://twitter.com/'"
+        [autoSetMeta]="false"
+      ></share-buttons>
+      </mat-card-actions>
+    </mat-card>    
+</div>
